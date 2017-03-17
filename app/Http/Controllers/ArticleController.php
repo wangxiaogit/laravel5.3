@@ -16,8 +16,8 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $aa = $this->article->test();
+        $articles = $this->article->page(config('blog.article.number'), config('blog.article.sort'), config('blog.article.sortColumn'));
 
-        dd($aa);
+        dd($articles);
     }
 }
