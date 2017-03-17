@@ -16,9 +16,38 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
+        'name'           => $faker->name,
+        'email'          => $faker->safeEmail,
+        'status'         => true,
+        'confirm_code'   => str_random(64),
+        'password'       => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10)
+    ];
+});
+
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+    return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'parent_id' => 0,
+        'path' => $faker->url
+    ];
+});
+
+$factory->define(App\Article::class, function(Faker\Generator $faker) {
+    $user_ids = App\User::pluck('id')->random();
+    $category_ids = \App\Category::pluck('id')->random();
+    $title = $faker->sentence(mt_rand(3,10));
+    return [
+        'user_id'      => $user_ids,
+        'category_id'  => $category_ids,
+        'last_user_id' => $user_ids,
+        'slug'     => str_slug($title),
+        'title'    => $title,
+        'subtitle' => strtolower($title),
+        'content'  => $faker->paragraph,
+        'page_image'       => $faker->imageUrl(),
+        'meta_description' => $faker->sentence,
+        'is_draft'         => false,
+        'published_at'     => $faker->dateTimeBetween($startDate = '-2 months', $endDate = 'now')
     ];
 });
