@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'Articles'    => '文章',
+    'article'    => '文章',
     'Discussions' => '讨论',
     'Follow'      => '关注',
     'Following'   => '关注中',
@@ -66,7 +66,7 @@ return [
     'Tags'                 => '所有标签',
     'Tag Meta'             => '标签下所有文章和讨论',
     'Tags Meta'            => '所有文章和讨论的标签',
-    'For Articles'         => '文章',
+    'For article'         => '文章',
     'For Discussions'      => '讨论',
     'Categories'           => '所有分类',
     'Categories Meta'      => '文章所有分类',

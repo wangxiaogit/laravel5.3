@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'Articles'    => 'Articles',
+    'article'    => 'article',
     'Discussions' => 'Discussions',
     'Follow'      => 'Follow',
     'Following'   => 'Following',
@@ -66,7 +66,7 @@ return [
     'Tags'                 => 'Tags',
     'Tag Meta'             => 'All the articles and discussions for the tag.',
     'Tags Meta'            => 'The categories for all the articles and the discussions.',
-    'For Articles'         => 'For Articles',
+    'For article'         => 'For article',
     'For Discussions'      => 'For Discussions',
     'Categories'           => 'Categories',
     'Categories Meta'      => 'The categories for all the articles.',

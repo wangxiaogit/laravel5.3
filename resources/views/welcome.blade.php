@@ -66,7 +66,7 @@
     </head>
     <body>
         <div id="app">
-            <example></example>
+            <jumbotron></jumbotron>
         </div>
         <script src="{{ elixir('/js/app.js') }}"></script>
         {{--<div class="flex-center position-ref full-height">--}}

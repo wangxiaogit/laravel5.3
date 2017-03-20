@@ -31,6 +31,24 @@ class ArticleRepository
     }
 
     /**
+     * Get the article by article's slug.
+     * The Admin can preview the article if the article is drafted.
+     *
+     * @param $slug
+     * @return object
+     */
+    public function getBySlug($slug)
+    {
+        $this->model = $this->checkAuthScope();
+
+        $article = $this->model->where('slug', $slug)->firstOrFail();
+
+        $article->increment('view_count');
+
+        return $article;
+    }
+
+    /**
      * Check the auth and the model without global scope when user is the admin.
      *
      * @return Model
@@ -43,4 +61,6 @@ class ArticleRepository
 
         return $this->model;
     }
+
+
 }

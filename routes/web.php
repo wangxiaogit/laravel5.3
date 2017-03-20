@@ -19,5 +19,5 @@ Auth::routes();
 
 // Article
 Route::get('/', 'ArticleController@index');
-
+Route::get('{slug}', 'ArticleController@show');
 

@@ -51,3 +51,11 @@ $factory->define(App\Article::class, function(Faker\Generator $faker) {
         'published_at'     => $faker->dateTimeBetween($startDate = '-2 months', $endDate = 'now')
     ];
 });
+
+$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'tag'              => $faker->word,
+        'title'            => $faker->sentence,
+        'meta_description' => $faker->sentence,
+    ];
+});
