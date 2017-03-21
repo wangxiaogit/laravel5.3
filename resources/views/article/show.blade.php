@@ -7,6 +7,7 @@
 @section('content')
     <jumbotron>
         <h4>{{ $article->title }}</h4>
+
         <h6>{{ $article->title }}</h6>
 
         <div class="header">

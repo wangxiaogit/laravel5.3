@@ -1,4 +1,5 @@
 window.$ = require('jquery');
+window.marked = require('marked');
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -15,6 +16,7 @@ require('./bootstrap');
  */
 
 Vue.component('jumbotron', require('./components/Jumbotron.vue'));
+Vue.component('parse', require('./components/Parse.vue'));
 // Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
