@@ -24,7 +24,7 @@ class ArticleController extends Controller
 
     public function show($slug)
     {
-        $article = $this->article->getBySlug();
+        $article = $this->article->getBySlug($slug);
 
         return view('article.show', compact('article'));
     }

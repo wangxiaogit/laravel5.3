@@ -9,7 +9,21 @@
 namespace App\Repositories;
 
 
+use App\Tag;
+
 class TagRepository
 {
+    use BaseRepository;
 
+    protected $model;
+
+    public function __construct(Tag $tag)
+    {
+        $this->model = $tag;
+    }
+
+    public function getByName($name)
+    {
+        $this->model->where('tag',$name)->first();
+    }
 }
