@@ -22,10 +22,10 @@ class TagController extends Controller
 
     public function show($tag)
     {
-        dd('show');
         $tag = $this->tag->getByName($tag);
 
         $articles = $tag->articles;
-        //return view('tag.show', compact('tag', 'articles'));
+        //dd($articles);
+        return view('tag.show', compact('tag', 'articles'));
     }
 }

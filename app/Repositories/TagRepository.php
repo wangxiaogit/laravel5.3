@@ -24,6 +24,6 @@ class TagRepository
 
     public function getByName($name)
     {
-        $this->model->where('tag',$name)->first();
+       return $this->model->where('tag',$name)->first();
     }
 }

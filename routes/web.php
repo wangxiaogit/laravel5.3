@@ -11,40 +11,40 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-//Auth::routes();
+Auth::routes();
 
 // Tag
 Route::group(['prefix'=>'tag'], function () {
     Route::get('/', 'TagController@index');
-    Route::get('{$tag}', 'TagController@show');
+    Route::get('{tag}', 'TagController@show');
 });
 
 //Category
-//Route::group(['prefix'=> 'category'], function () {
-//    Route::get('/', 'CategoryController@index');
-//    Route::get('{$category}', 'CategoryController@show');
-//});
+Route::group(['prefix'=> 'category'], function () {
+    Route::get('/', 'CategoryController@index');
+    Route::get('{category}', 'CategoryController@show');
+});
 
-// Article
-Route::get('/', 'ArticleController@index');
-Route::get('{slug}', 'ArticleController@show');
+//user
+Route::group(['prefix'=>'user'], function (){
+    Route::get('/', 'UserController@index');
 
-////user
-//Route::group(['prefix'=>'user'], function (){
-//    Route::get('/', 'UserController@index');
-//
 //    Route::group(['middleware'=>'auth'], function (){
 //        Route::get('profile', 'UserController@edit');
 //        Route::post('avatar', 'UserController@avatar');
 //        Route::put('profile/{id}', 'UserController@update');
 //        Route::post('follow/{id}', 'UserController@doFollow');
 //    });
-//    Route::group(['prefix'=>'{username}'], function (){
-//        Route::get('/', 'UserController@show');
-//        Route::get('following', 'UserController@following');
-//    });
-//});
+    Route::group(['prefix'=>'{username}'], function (){
+        Route::get('/', 'UserController@show');
+        Route::get('following', 'UserController@following');
+    });
+});
+
+// Article
+Route::get('/', 'ArticleController@index');
+Route::get('{slug}', 'ArticleController@show');
