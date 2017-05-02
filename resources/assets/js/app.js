@@ -16,7 +16,7 @@ require('./bootstrap');
  */
 
 Vue.component('jumbotron', require('./components/Jumbotron.vue'));
-Vue.component('parse', require('./components/Parse.vue'));
+//Vue.component('parse', require('./components/Parse.vue'));
 // Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({

@@ -27,7 +27,7 @@
                         <div class="extra">
                             @foreach($article->tags as $tag)
                                 <a href="{{ url('tag', ['tag'=> $tag->tag]) }}">
-                                    <div class="label"><i class="ion-pricetag">{{ $tag->tag }}</i></div>
+                                    <div class="label"><i class="ion-pricetag"></i>{{ $tag->tag }}</div>
                                 </a>
                             @endforeach
 

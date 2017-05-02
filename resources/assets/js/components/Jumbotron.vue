@@ -1,7 +1,7 @@
 <template>
     <div :class="wrapperClass">
         <div :class="jumbotronClass">
-            <div :class="row">
+            <div class="row">
                 <div :class="colClass">
                     <slot></slot>
                 </div>

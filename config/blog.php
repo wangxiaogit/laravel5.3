@@ -15,7 +15,7 @@ return [
     // Article Page
     'article' => [
         'title'       => 'Nothing is impossible.',
-        'description' => 'https://aa.com',
+        'description' => 'https://laraving.com',
         'number'      => 15,
         'sort'        => 'desc',
         'sortColumn'  => 'published_at',
