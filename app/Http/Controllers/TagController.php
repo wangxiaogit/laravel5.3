@@ -25,7 +25,7 @@ class TagController extends Controller
         $tag = $this->tag->getByName($tag);
 
         $articles = $tag->articles;
-        //dd($articles);
+
         return view('tag.show', compact('tag', 'articles'));
     }
 }

@@ -10,12 +10,10 @@
         <div class="row">
             @forelse($tags as $tag)
                 <div class="col-md-3 text-center">
-                    <div class="panel panel-danger">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="panel-title">
-                                <h3>
-                                    <a href="{{ url('tag', ['tag'=>$tag->tag]) }}">{{ $tag->tag }}</a>
-                                </h3>
+                                <a href="{{ url('tag', ['tag'=>$tag->tag]) }}">{{ $tag->tag }}</a>
                             </div>
                         </div>
                         <div class="panel-body" style="font-size: 12px;">

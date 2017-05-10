@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $lang= config('app.locale') == 'zh-cn' ? 'zh': config('app.locale');
+        $lang= config('app.locale') == 'zh_cn' ? 'zh': config('app.locale');
 
         Carbon::setLocale($lang);
     }
