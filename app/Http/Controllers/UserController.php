@@ -24,7 +24,7 @@ class UserController extends Controller
     public function show($username)
     {
         $user = $this->user->getByName($username);
-        dd($user->toArray());
+//        dd($user->toArray());
         if (!$user) abort(404);
 
         return view('user.index', compact('user'));

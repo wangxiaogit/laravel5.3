@@ -54,8 +54,31 @@ $factory->define(App\Article::class, function(Faker\Generator $faker) {
 
 $factory->define(App\Tag::class, function (Faker\Generator $faker) {
     return [
-        'tag'              => $faker->word,
-        'title'            => $faker->sentence,
+        'tag'                => $faker->word,
+        'title'              => $faker->sentence,
         'meta_description' => $faker->sentence,
+    ];
+});
+
+$factory->define(App\Discussion::class, function (Faker\Generator $faker) {
+    $user_ids = App\User::pluck('id')->random();
+    return [
+        'user_id'      => $user_ids,
+        'last_user_id' => $user_ids,
+        'title'        => $faker->sentence,
+        'content'      => $faker->paragraph,
+        'status'       => true
+    ];
+});
+
+$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+    $user_id = App\User::pluck('id')->random();
+    $discussion_id = App\Discussion::pluck('id')->random();
+    $type = ['discussions', 'articles'];
+    return [
+        'user_id' => $user_id,
+        'commentable_type' => $type[mt_rand(0, 1)],
+        'commentable_id' => $discussion_id,
+        'content' =>$faker->paragraph
     ];
 });
