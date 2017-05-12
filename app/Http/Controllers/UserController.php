@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\UserRepositories;
+use Identicon\Identicon;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -24,8 +25,6 @@ class UserController extends Controller
     public function show($username)
     {
         $user = $this->user->getByName($username);
-//        dd($user->toArray());
-        if (!$user) abort(404);
 
         return view('user.index', compact('user'));
     }

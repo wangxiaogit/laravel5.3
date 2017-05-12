@@ -33,12 +33,12 @@ Route::group(['prefix'=> 'category'], function () {
 Route::group(['prefix'=>'user'], function (){
     Route::get('/', 'UserController@index');
 
-//    Route::group(['middleware'=>'auth'], function (){
-//        Route::get('profile', 'UserController@edit');
-//        Route::post('avatar', 'UserController@avatar');
-//        Route::put('profile/{id}', 'UserController@update');
-//        Route::post('follow/{id}', 'UserController@doFollow');
-//    });
+    Route::group(['middleware'=>'auth'], function (){
+        Route::get('profile', 'UserController@edit');
+        Route::post('avatar', 'UserController@avatar');
+        Route::put('profile/{id}', 'UserController@update');
+        Route::post('follow/{id}', 'UserController@doFollow');
+    });
     Route::group(['prefix'=>'{username}'], function (){
         Route::get('/', 'UserController@show');
         Route::get('following', 'UserController@following');

@@ -74,11 +74,15 @@ $factory->define(App\Discussion::class, function (Faker\Generator $faker) {
 $factory->define(App\Comment::class, function (Faker\Generator $faker) {
     $user_id = App\User::pluck('id')->random();
     $discussion_id = App\Discussion::pluck('id')->random();
-    $type = ['discussions', 'articles'];
+    $article_id = App\Article::pluck('id')->random();
+
+    $types = ['discussions', 'articles'];
+    $commentable_type = $types[mt_rand(0, 1)];
+
     return [
         'user_id' => $user_id,
-        'commentable_type' => $type[mt_rand(0, 1)],
-        'commentable_id' => $discussion_id,
+        'commentable_type' => $commentable_type,
+        'commentable_id' => $commentable_type ? $discussion_id : $article_id,
         'content' =>$faker->paragraph
     ];
 });

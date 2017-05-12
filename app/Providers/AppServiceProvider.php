@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Article;
+use App\Discussion;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,6 +20,11 @@ class AppServiceProvider extends ServiceProvider
         $lang= config('app.locale') == 'zh_cn' ? 'zh': config('app.locale');
 
         Carbon::setLocale($lang);
+
+        Relation::morphMap([
+            'articles'    => Article::class,
+            'discussions' => Discussion::class
+        ]);
     }
 
     /**
