@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\UserRepositories;
+use App\Services\FileManager\UploadManager;
 use Identicon\Identicon;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
     protected $user;
+    protected $manager;
 
-    public function __construct(UserRepositories $user)
+    public function __construct(UserRepositories $user, UploadManager $uploadManager)
     {
-        $this->user =$user;
+        $this->user = $user;
+        $this->manager = $uploadManager;
     }
 
     public function index()
@@ -27,30 +31,6 @@ class UserController extends Controller
         $user = $this->user->getByName($username);
 
         return view('user.index', compact('user'));
-    }
-
-    public function following($username)
-    {
-        $user = $this->user->getByName($username);
-
-        if (!isset($user)) abort(404);
-
-        $followings = $user->followings;
-
-        return view('user.following', compact('user', 'followings'));
-    }
-
-    public function doFollow($id)
-    {
-        $user = $this->user->getById($id);
-
-        if (\Auth::user()->isFollowing($id)) {
-            \Auth::user()->unFollowing($id);
-        } else {
-            \Auth::user()->follow($id);
-        }
-
-        return redirect()->back();
     }
 
     public function edit()
@@ -73,18 +53,34 @@ class UserController extends Controller
 
     public function avatar(Request $request)
     {
-        $file = $request->files['files'];
+        $file = $request->file('files');
 
         $input = ['image'=> $file];
-        $rules = ['image'=> 'image'];
+        $rules = ['picture'=> 'image'];
 
         $validator = \Validator::make($input, $rules);
+
         if ($validator->fails()) {
             return response()->json(['succss'=>false, 'errors'=>$validator->getMessageBag()->toArray()]);
         }
 
-        $detinationPath = 'avatar/'.\Auth::user()->id.'/';
-        $fileType = 1;
+        $destinationPath = 'avatar/';
+
+        $fileType = $file->getClientOriginalExtension();
+        $filename = \Auth::user()->id.'_'.time().'_'.str_random(12). '.' . $fileType;
+
+        $file->storeAs($destinationPath, $filename, 'uploads');
+
+        $image = Image::make('uploads/'.$destinationPath.$filename)->fit(400)->stream();
+
+        $this->manager->saveFile($destinationPath.$filename, $image->__toString());
+
+        $this->user->saveAvatar(\Auth::user()->id, '/uploads/'.$destinationPath.$filename);
+
+        return response()->json([
+            'success' => true,
+            'image'   => '/uploads/'.$destinationPath.$filename
+        ]);
     }
 
 }

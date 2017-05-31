@@ -1431,7 +1431,6 @@ img {
   background-color: #f9f9fb;
   border: 1px solid #ddd;
   border-radius: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
@@ -3032,7 +3031,6 @@ output {
   border: 1px solid #dce4ec;
   border-radius: 6px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
@@ -4024,7 +4022,6 @@ input[type="button"].btn-block {
 
 .fade {
   opacity: 0;
-  -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 
@@ -4052,11 +4049,8 @@ tbody.collapse.in {
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition-property: height, visibility;
   transition-property: height, visibility;
-  -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
-  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 
@@ -5718,7 +5712,6 @@ a.badge:hover, a.badge:focus {
   background-color: #f9f9fb;
   border: 1px solid #ddd;
   border-radius: 4px;
-  -webkit-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out;
 }
 
@@ -5873,13 +5866,11 @@ a.thumbnail.active {
   text-align: center;
   background-color: #34495e;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  -webkit-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 
 .progress-striped .progress-bar,
 .progress-bar-striped {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 40px 40px;
 }
@@ -5895,7 +5886,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-success {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -5904,7 +5894,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-info {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -5913,7 +5902,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-warning {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -5922,7 +5910,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-danger {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -6726,7 +6713,6 @@ button.close {
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
   transform: translate(0, -25%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
@@ -7152,7 +7138,6 @@ button.close {
 .carousel-inner > .item {
   display: none;
   position: relative;
-  -webkit-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left;
 }
 
@@ -7166,7 +7151,6 @@ button.close {
 
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel-inner > .item {
-    -webkit-transition: -webkit-transform 0.6s ease-in-out;
     transition: -webkit-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
@@ -7246,7 +7230,6 @@ button.close {
 }
 
 .carousel-control.left {
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
@@ -7255,7 +7238,6 @@ button.close {
 .carousel-control.right {
   left: auto;
   right: 0;
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
@@ -11385,6 +11367,459 @@ button.close {
   content: "";
 }
 
+.markdown {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #636b6f;
+  overflow: hidden;
+  line-height: 2;
+  word-wrap: break-word;
+}
+
+.markdown a {
+  background: transparent;
+}
+
+.markdown a:active,
+.markdown a:hover {
+  outline: 0;
+}
+
+.markdown ol li {
+  margin: 8px 0;
+}
+
+.markdown pre[class*=language-] {
+  margin: 1.2em 0 !important;
+}
+
+.markdown strong {
+  font-weight: bold;
+}
+
+.markdown h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown img {
+  border: 0;
+}
+
+.markdown hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown td,
+.markdown th {
+  padding: 0;
+}
+
+.markdown * {
+  box-sizing: border-box;
+}
+
+.markdown a {
+  color: #16A085;
+  text-decoration: none;
+}
+
+.markdown a:hover,
+.markdown a:focus,
+.markdown a:active {
+  text-decoration: underline;
+}
+
+.markdown hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown hr:before,
+.markdown hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown hr:after {
+  clear: both;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown h1 {
+  font-size: 30px;
+}
+
+.markdown h2 {
+  font-size: 21px;
+}
+
+.markdown h3 {
+  font-size: 16px;
+}
+
+.markdown h4 {
+  font-size: 14px;
+}
+
+.markdown h5 {
+  font-size: 12px;
+}
+
+.markdown h6 {
+  font-size: 11px;
+}
+
+.markdown blockquote {
+  margin: 0;
+}
+
+.markdown ul,
+.markdown ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown ol ol {
+  list-style-type: lower-roman;
+}
+
+.markdown dd {
+  margin-left: 0;
+}
+
+.markdown code,
+.markdown pre {
+  font-family: monaco, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1em;
+}
+
+.markdown pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: auto;
+}
+
+.markdown .markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown .markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown .anchor:focus {
+  outline: none;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  position: relative;
+  margin-top: 1.0em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 2px solid #eee;
+}
+
+.markdown h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 2px solid #eee;
+}
+
+.markdown h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown h4 {
+  font-size: 1.25em;
+}
+
+.markdown h5 {
+  font-size: 1em;
+}
+
+.markdown h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown p,
+.markdown blockquote,
+.markdown ul,
+.markdown ol,
+.markdown dl,
+.markdown table,
+.markdown pre {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown ul,
+.markdown ol {
+  padding-left: 2em;
+}
+
+.markdown ol ol,
+.markdown ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown li > p {
+  margin-top: 16px;
+}
+
+.markdown dl {
+  padding: 0;
+}
+
+.markdown dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown blockquote {
+  font-size: inherit;
+  padding: 0 15px;
+  color: #7F8C8D;
+  border-left: 4px solid #ecf0f1;
+}
+
+.markdown blockquote > :first-child {
+  margin-top: 20;
+}
+
+.markdown blockquote > :last-child {
+  margin-bottom: 20;
+}
+
+.markdown blockquote {
+  margin: 20px 0 !important;
+  background-color: rgba(102, 128, 153, 0.03);
+  padding: 6px 8px;
+}
+
+.markdown table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  margin: 25px 0;
+}
+
+.markdown table th {
+  font-weight: bold;
+}
+
+.markdown table th,
+.markdown table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown img {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.markdown img:not(.emoji) {
+  border: 1px solid #ddd;
+  max-width: 95%;
+  box-shadow: 0 0 30px #ccc;
+  -moz-box-shadow: 0 0 30px #ccc;
+  -webkit-box-shadow: 0 0 30px #ccc;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-left: 2%;
+}
+
+.markdown code {
+  margin: 0;
+  color: #C2627B;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  background-color: #ECF0F1;
+  max-width: 740px;
+  overflow-x: auto;
+}
+
+.markdown code:before,
+.markdown code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+  color: #E6E8D3;
+}
+
+.markdown .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown .highlight pre,
+.markdown pre {
+  padding: 14px;
+  overflow: auto;
+  line-height: 1.45;
+  background-color: #4e4e4e;
+  border-radius: 3px;
+  color: #fff;
+  border: none;
+}
+
+.markdown .highlight pre {
+  margin-bottom: 0;
+}
+
+.markdown pre {
+  word-wrap: normal;
+}
+
+.markdown pre code {
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown pre code:before,
+.markdown pre code:after {
+  content: normal;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment, .hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag, .hljs-keyword, .hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in, .hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
 .pagination {
   position: relative;
   /*display: block;*/
@@ -11541,7 +11976,6 @@ button.close {
   outline: none;
   padding: 12px 10px;
   text-align: center;
-  -webkit-transition: 0.25s ease-out;
   transition: 0.25s ease-out;
 }
 
@@ -11757,7 +12191,6 @@ button.close {
   padding: 0 4px;
   border-radius: 50px;
   background-clip: padding-box;
-  -webkit-transition: background 0.2s ease-out, border-color 0s ease-out, color 0.2s ease-out;
   transition: background 0.2s ease-out, border-color 0s ease-out, color 0.2s ease-out;
 }
 
@@ -11768,7 +12201,6 @@ button.close {
   background-color: #1abc9c;
   border-color: #1abc9c;
   color: #ffffff;
-  -webkit-transition: background 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
   transition: background 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
 }
 
@@ -12153,8 +12585,6 @@ i.large {
   width: 150px !important;
   height: 150px;
   border-radius: 50%;
-  -webkit-transition: transition .6s ease-in;
-  -webkit-transition: -webkit-transform .6s ease-in;
   transition: -webkit-transform .6s ease-in;
   transition: transform .6s ease-in;
   transition: transform .6s ease-in, -webkit-transform .6s ease-in;
@@ -12291,7 +12721,6 @@ i.large {
   text-transform: none;
   border: 0 solid transparent;
   border-radius: .28571429rem;
-  -webkit-transition: background .1s ease;
   transition: background .1s ease;
   margin-top: 5px;
   margin-bottom: 5px;

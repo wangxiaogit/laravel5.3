@@ -26,4 +26,13 @@ class UserRepositories
     {
         return $this->model->where('name', $name)->first();
     }
+
+    public function saveAvatar($id, $photo)
+    {
+        $user = $this->getById($id);
+
+        $user->avatar = $photo;
+
+        return $user->save();
+    }
 }
