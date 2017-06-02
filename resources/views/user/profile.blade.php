@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <label for="GitHub" class="col-md-3 control-label">GitHub</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" id="GitHub" name="github" value="{{ $user->github_name }}">
+                                <input type="text" class="form-control" id="GitHub" name="github_name" value="{{ $user->github_name }}">
                             </div>
                         </div>
                         <div class="form-group">

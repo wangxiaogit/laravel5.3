@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Repositories\UserRepositories;
 use App\Services\FileManager\UploadManager;
-use Identicon\Identicon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -45,7 +44,6 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $input = $request->except(['name', 'email', 'is_admin']);
-
         $user = $this->user->update($id, $input);
 
         return redirect()->back();
@@ -83,4 +81,47 @@ class UserController extends Controller
         ]);
     }
 
+    public function following($username)
+    {
+        $user = $this->user->getByName($username);
+
+        if (!isset($user)) abort(404);
+
+        $followings = $user->followings;
+
+        return view('user.following', compact('user', 'followings'));
+    }
+
+    public function doFollow($id)
+    {
+        if (\Auth::user()->isFollowing($id)) {
+            \Auth::user()->unfollow($id);
+        } else {
+            \Auth::user()->follow($id);
+        }
+
+        return redirect()->back();
+    }
+
+    public function discussions($username)
+    {
+        $user = $this->user->getByName($username);
+
+        if (!isset($user)) abort(404);
+
+        $discussions = $user->discussions;
+
+        return view('user.discussions', compact('user', 'discussions'));
+    }
+
+    public function comments($username)
+    {
+        $user = $this->user->getByName($username);
+
+        if (!isset($user)) abort(404);
+
+        $comments = $user->comments;
+
+        return view('user.comments', compact('user', 'comments'));
+    }
 }

@@ -42,7 +42,10 @@ Route::group(['prefix'=>'user'], function (){
     Route::group(['prefix'=>'{username}'], function (){
         Route::get('/', 'UserController@show');
         Route::get('following', 'UserController@following');
+        Route::get('discussions', 'UserController@discussions');
+        Route::get('comments', 'UserController@comments');
     });
+
 });
 
 // Article

@@ -17,7 +17,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'is_admin', 'avatar', 'password', 'confirm_code',
+        'nickname', 'real_name', 'weibo_name', 'weibo_link', 'email_notify_enabled',
+        'github_id', 'github_name', 'github_url', 'website', 'description', 'status'
     ];
 
     /**
@@ -29,26 +31,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * Get the user for the blog article.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Get the category for the blog article.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-
     public function comments()
     {
         return $this->hasMany(Comment::class);
@@ -57,5 +39,50 @@ class User extends Authenticatable
     public function discussions()
     {
         return $this->hasMany(Discussion::class);
+    }
+
+    /**
+     *  I follow
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function followings()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'user_id', 'follow_id');
+    }
+
+    /**
+     * follow me
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'follow_id', 'user_id');
+    }
+
+
+    /**
+     * Judge follow
+     */
+    public function isFollowing($user)
+    {
+        return $this->followings->contains($user);
+    }
+
+    /**
+     * do follow
+     */
+    public function follow($user)
+    {
+        return $this->followings()->attach($user);
+    }
+
+    /**
+     * do unfollow
+     */
+    public function unfollow($user)
+    {
+        return $this->followings()->detach($user);
     }
 }

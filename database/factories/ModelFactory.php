@@ -86,3 +86,5 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
         'content' =>$faker->paragraph
     ];
 });
+
+
