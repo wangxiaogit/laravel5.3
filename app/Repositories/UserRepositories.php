@@ -36,5 +36,10 @@ class UserRepositories
         return $user->save();
     }
 
+    public function changePassword()
+    {
+        return $user->update(['password' => bcrypt($password)]);
+    }
+
 
 }

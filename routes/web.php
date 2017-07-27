@@ -17,6 +17,9 @@
 
 Auth::routes();
 
+//password
+Route::get('password/change', 'UserController@changePassword' )->middleware('auth');
+
 // Tag
 Route::group(['prefix'=>'tag'], function () {
     Route::get('/', 'TagController@index');
@@ -45,7 +48,15 @@ Route::group(['prefix'=>'user'], function (){
         Route::get('discussions', 'UserController@discussions');
         Route::get('comments', 'UserController@comments');
     });
+});
 
+// User Setting
+Route::group(['middleware' => 'auth', 'prefix' => 'setting'], function () {
+    Route::get('/', 'SettingController@index')->name('setting.index');
+    Route::get('binding', 'SettingController@binding')->name('setting.binding');
+
+    Route::get('notification', 'SettingController@notification')->name('setting.notification');
+    Route::post('notification', 'SettingController@setNotification');
 });
 
 // Article

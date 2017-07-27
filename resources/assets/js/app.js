@@ -19,6 +19,7 @@ require('./bootstrap');
 Vue.component('jumbotron', require('./components/Jumbotron.vue'));
 Vue.component('parse', require('./components/Parse.vue'));
 Vue.component('avatar', require('./components/Avatar.vue'));
+Vue.component('comment', require('./components/Comment.vue'));
 
 const app = new Vue({
     el: '#app'
